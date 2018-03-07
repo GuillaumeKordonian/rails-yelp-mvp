@@ -1,0 +1,12 @@
+<h1> List of the restaurants</h1>
+<%= link_to "Create a new restaurant", new_restaurant_path, class: "btn btn-success"%>
+
+<hr>
+<ul>
+  <% @restaurants.each do |restaurant| %>
+    <li><strong><%= restaurant.name.upcase %></strong> | <%= restaurant.category %> | <%= link_to "See details", restaurant, class: "btn btn-primary"%></li>
+    <li>Phone: <%= restaurant.phone_number %> | Address: <%= restaurant.address %></li>
+    <hr>
+  <% end %>
+</ul>
+<hr>
